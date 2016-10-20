@@ -12,6 +12,7 @@
 		EA0F44441DB8917000FD0C3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA0F44421DB8917000FD0C3A /* Main.storyboard */; };
 		EA0F44461DB8917000FD0C3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA0F44451DB8917000FD0C3A /* Assets.xcassets */; };
 		EA0F44491DB8917000FD0C3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA0F44471DB8917000FD0C3A /* LaunchScreen.storyboard */; };
+		EA0F44541DB8ABCD00FD0C3A /* CatPlayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0F44531DB8ABCD00FD0C3A /* CatPlayManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		EA0F44451DB8917000FD0C3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA0F44481DB8917000FD0C3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA0F444A1DB8917000FD0C3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA0F44531DB8ABCD00FD0C3A /* CatPlayManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatPlayManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		EA0F443D1DB8917000FD0C3A /* CatPlay */ = {
 			isa = PBXGroup;
 			children = (
+				EA0F44521DB8ABB000FD0C3A /* Service */,
 				EA0F443E1DB8917000FD0C3A /* AppDelegate.swift */,
 				EA0F44401DB8917000FD0C3A /* ViewController.swift */,
 				EA0F44421DB8917000FD0C3A /* Main.storyboard */,
@@ -62,6 +65,14 @@
 				EA0F444A1DB8917000FD0C3A /* Info.plist */,
 			);
 			path = CatPlay;
+			sourceTree = "<group>";
+		};
+		EA0F44521DB8ABB000FD0C3A /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				EA0F44531DB8ABCD00FD0C3A /* CatPlayManager.swift */,
+			);
+			name = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA0F44541DB8ABCD00FD0C3A /* CatPlayManager.swift in Sources */,
 				EA0F44411DB8917000FD0C3A /* ViewController.swift in Sources */,
 				EA0F443F1DB8917000FD0C3A /* AppDelegate.swift in Sources */,
 			);
@@ -204,7 +216,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -248,7 +260,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -263,6 +275,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2B889MA252;
 				INFOPLIST_FILE = CatPlay/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = li.min.com.CatPlay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -276,6 +289,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2B889MA252;
 				INFOPLIST_FILE = CatPlay/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = li.min.com.CatPlay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -302,6 +316,7 @@
 				EA0F444F1DB8917000FD0C3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
