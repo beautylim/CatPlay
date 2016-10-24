@@ -56,6 +56,9 @@ class CatPlayManager{
         if let httpHeader = header{
             httpRequest.allHTTPHeaderFields = httpHeader
         }
+        httpRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        let version = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
+        httpRequest.setValue("CatPlay" + version, forHTTPHeaderField: "User-Agent")
         httpRequest.httpMethod = method.rawValue
         if method == .POST,let parameterDic = parameter {
             var httpBodyString = ""

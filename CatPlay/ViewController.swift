@@ -13,7 +13,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        CatPlayManager.shareInstance.request(url: "issues", method: .GET, parameter: ["assign_to":"me"], header: getAuthDic(), Success: { (data, response) in
+        CatPlayManager.shareInstance.request(url: "issues.json", method: .GET, parameter: ["assign_to":"me"], header: getAuthDic(), Success: { (data, response) in
+            
+            do{
+                let json = try JSONSerialization.jsonObject(with: data, options:.allowFragments)
+                print(json)
+            }catch let error as NSError{
+                print(error)
+            }
+            
                 print("success connect!")
             }) { (error) in
                 print("\(error.reason)  and  \(error.statusCode)")
