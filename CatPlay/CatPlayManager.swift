@@ -20,7 +20,7 @@ enum HTTPErrorCode:Int{
 class CatPlayManager{
     var hostURL:String {
         get {
-            return "http://Redmine.adways.cn/redmine"
+            return "http://Redmine.adways.cn/redmine"//需要自己改
         }
         set{
             self.hostURL = newValue

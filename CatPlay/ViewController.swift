@@ -34,8 +34,8 @@ class ViewController: UIViewController {
     }
 
     fileprivate func setHttpAuth()->String{
-        let userAccount = "yang.hao"
-        let password = "11111111"
+        let userAccount = "lalala"//需要自己改
+        let password = "lalaala"//需要自己改
         let str = NSString.init(string: "\(userAccount):\(password)")
         let data = str.data(using: String.Encoding.utf8.rawValue)
         let base64 = data?.base64EncodedString(options: .lineLength64Characters)
