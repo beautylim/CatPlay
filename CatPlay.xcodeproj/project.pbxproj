@@ -13,6 +13,7 @@
 		EA0F44461DB8917000FD0C3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA0F44451DB8917000FD0C3A /* Assets.xcassets */; };
 		EA0F44491DB8917000FD0C3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA0F44471DB8917000FD0C3A /* LaunchScreen.storyboard */; };
 		EA0F44541DB8ABCD00FD0C3A /* CatPlayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0F44531DB8ABCD00FD0C3A /* CatPlayManager.swift */; };
+		EA38BCAA1DBF02E60016C20E /* CatPlayDownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA38BCA91DBF02E60016C20E /* CatPlayDownloadManager.swift */; };
 		EA5A9EFA1DBDE27900399548 /* CatPlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A9EF91DBDE27900399548 /* CatPlay.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		EA0F44481DB8917000FD0C3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA0F444A1DB8917000FD0C3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA0F44531DB8ABCD00FD0C3A /* CatPlayManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatPlayManager.swift; sourceTree = "<group>"; };
+		EA38BCA91DBF02E60016C20E /* CatPlayDownloadManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatPlayDownloadManager.swift; sourceTree = "<group>"; };
 		EA5A9EF91DBDE27900399548 /* CatPlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatPlay.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,6 +76,7 @@
 			children = (
 				EA0F44531DB8ABCD00FD0C3A /* CatPlayManager.swift */,
 				EA5A9EF91DBDE27900399548 /* CatPlay.swift */,
+				EA38BCA91DBF02E60016C20E /* CatPlayDownloadManager.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA38BCAA1DBF02E60016C20E /* CatPlayDownloadManager.swift in Sources */,
 				EA0F44541DB8ABCD00FD0C3A /* CatPlayManager.swift in Sources */,
 				EA0F44411DB8917000FD0C3A /* ViewController.swift in Sources */,
 				EA5A9EFA1DBDE27900399548 /* CatPlay.swift in Sources */,
