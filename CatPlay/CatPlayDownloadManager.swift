@@ -26,11 +26,10 @@ class CatPlayDownloadManager:NSObject,URLSessionDownloadDelegate{
     }
     
     func suspend(){
-        print("暂停下载")
-
         guard task == nil else{
             return task.cancel { (data) in
                 self.resumeData = data
+                print("暂停下载")
             }
         }
     }
