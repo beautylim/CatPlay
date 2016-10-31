@@ -19,29 +19,6 @@ class ViewController: UIViewController {
         downLoadManager.progress = {progress in
             self.progressLabel.text = "已经下载了 \(progress)"
         }
-        // Do any additional setup after loading the view, typically from a nib.
-//        CatPlayManager.shareInstance.request(url: "issues.json", method: .GET, parameter: ["assign_to":"me"], header: getAuthDic(), success: { (response) in
-//            
-//                print("success connect!")
-//            }) { (error) in
-//                print("\(error.reason)  and  \(error.statusCode)")
-//        }
-        
-        //上传图片
-        
-//        CatPlayManager.shareInstance.upload(method: .POST, url:uploadImageHostURL, contentType: "image/jpeg", acceptType: "text/html", fromData: { () -> (Data) in
-//            let uploadImage = UIImage.init(named: "image_01")
-//            return UIImageJPEGRepresentation(uploadImage!, 1.0)!
-//            },progress: {percent in
-//                print("已经上传了\(percent)")
-//            }, success: { (response) in
-//                print("success upload image")
-//            }) { (error) in
-//                print("\(error.reason)  and  \(error.statusCode)")
-//        }
-        
-        //断点下载
-        
     
     }
     
@@ -69,8 +46,8 @@ class ViewController: UIViewController {
     }
 
     fileprivate func setHttpAuth()->String{
-        let userAccount = "yang.hao"//需要自己改
-        let password = "11111111"//需要自己改
+        let userAccount = "账户"//需要自己改
+        let password = "密码"//需要自己改
         let str = NSString.init(string: "\(userAccount):\(password)")
         let data = str.data(using: String.Encoding.utf8.rawValue)
         let base64 = data?.base64EncodedString(options: .lineLength64Characters)

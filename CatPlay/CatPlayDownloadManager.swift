@@ -8,6 +8,7 @@
 
 import Foundation
 
+//断点下载
 class CatPlayDownloadManager:NSObject,URLSessionDownloadDelegate{
     var resumeData:Data?
     var task:URLSessionDownloadTask!
@@ -19,10 +20,12 @@ class CatPlayDownloadManager:NSObject,URLSessionDownloadDelegate{
     }
     
     func start(){
-        print("开始下载")
-        initTask()
-        task = session.downloadTask(with: urlRequest)
-        task.resume()
+        if task == nil {
+            print("开始下载")
+            initTask()
+            task = session.downloadTask(with: urlRequest)
+            task.resume()
+        }
     }
     
     func suspend(){
@@ -45,7 +48,8 @@ class CatPlayDownloadManager:NSObject,URLSessionDownloadDelegate{
     func cancle(){
         print("取消下载")
         guard task == nil else {
-            return task.cancel()
+            task.cancel()
+            return task = nil
         }
     }
     

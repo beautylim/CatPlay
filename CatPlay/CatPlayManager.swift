@@ -22,7 +22,7 @@ enum HTTPErrorCode:Int{
 }
 
 class CatPlayManager:NSObject, URLSessionTaskDelegate{
-    let hostURL:String = "http://Redmine.adways.cn/redmine"
+    let hostURL:String = "自己某个服务器"
     static let shareInstance = CatPlayManager()
     var uploadDataProgress:((Double)->())?
     fileprivate override init(){
@@ -117,6 +117,19 @@ class CatPlayManager:NSObject, URLSessionTaskDelegate{
         uploadTask.resume()
     }
     
+    func urlSession(_ session: URLSession, task: URLSessionTask, didSendBodyData bytesSent: Int64, totalBytesSent: Int64, totalBytesExpectedToSend: Int64) {
+        if let progress = self.uploadDataProgress{
+            let nowPercent = Double(totalBytesSent) / Double(totalBytesExpectedToSend)
+            progress(nowPercent)
+        }
+    }
+    
+    func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
+        //https验证
+    }
+    
+    
+    //序列化
     func responseJSONSerializer(responseData:Data?,response:URLResponse?,error:Error?)->CatPlayResponseResult{
         print(response!)
         guard error == nil else { return CatPlayResponseResult.failure(HTTPError.init(reason: "有不明错误", statusCode:HTTPErrorCode.unknowReason))}
@@ -131,12 +144,16 @@ class CatPlayManager:NSObject, URLSessionTaskDelegate{
         }
     }
     
-    func urlSession(_ session: URLSession, task: URLSessionTask, didSendBodyData bytesSent: Int64, totalBytesSent: Int64, totalBytesExpectedToSend: Int64) {
-        if let progress = self.uploadDataProgress{
-            let nowPercent = Double(totalBytesSent) / Double(totalBytesExpectedToSend)
-            progress(nowPercent)
+    func responseStringSerializer(responseData:Data?,response:URLResponse?,error:Error?)->CatPlayResponseResult{
+        print(response!)
+        guard error == nil else { return CatPlayResponseResult.failure(HTTPError.init(reason: "有不明错误", statusCode:HTTPErrorCode.unknowReason))}
+        guard let data = responseData , data.count > 0 else {
+            return CatPlayResponseResult.failure(HTTPError.init(reason: "什么都没有返回", statusCode: HTTPErrorCode.nilResponseData))
         }
+        let resultString =  String.init(data: responseData!, encoding: String.Encoding.utf8)
+        return CatPlayResponseResult.success(resultString)
     }
+    
 }
 
 enum CatPlayResponseResult{
